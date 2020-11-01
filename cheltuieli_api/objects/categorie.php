@@ -44,10 +44,10 @@ class Categorie{
 
     }
 
-    function citeste_categorii($utilizator){
+    function citeste_categorii(){
     
         // select all query
-        $query = "SELECT * FROM " . $this->table_name . " WHERE utilizator LIKE " . $utilizator ;
+        $query = "SELECT * FROM " . $this->table_name . " WHERE utilizator LIKE " . $this->utilizator ;
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
