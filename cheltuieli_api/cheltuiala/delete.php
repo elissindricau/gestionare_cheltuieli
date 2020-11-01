@@ -8,29 +8,29 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
   
 // include database and object file
 include_once '../config/database.php';
-include_once '../objects/categorie.php';
+include_once '../objects/cheltuiala.php';
   
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
   
 // prepare Categorie object
-$cat = new Categorie($db);
+$chelt = new Cheltuiala($db);
   
 // get Categorie id
 $data = json_decode(file_get_contents("php://input"));
   
 // set Categorie id to be deleted
-$cat->id = $data->id;
+$chelt->id = $data->id;
   
 // delete the Categorie
-if($cat->delete()){
+if($chelt->delete()){
   
     // set response code - 200 ok
     http_response_code(200);
   
     // tell the user
-    echo json_encode(array("message" => "Categoria a fost stearsa."));
+    echo json_encode(array("message" => "Cheltuiala a fost stearsa."));
 }
   
 // if unable to delete the Categorie
@@ -40,6 +40,6 @@ else{
     http_response_code(503);
   
     // tell the user
-    echo json_encode(array("message" => "Nu am putut sterge categoria."));
+    echo json_encode(array("message" => "Nu am putut sterge cheltuiala."));
 }
 ?>
