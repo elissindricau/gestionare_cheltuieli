@@ -32,15 +32,17 @@ class Categorie{
         return $stmt;
     }
 
-    function copiaza_defaults($utilizator) {
-
-        $this->utilizator = $utilizator;
+    function copiaza_defaults() {
         
         foreach($this->default_cat as $cat){
             $this->categorie = $cat;
 
-            $this->create();
+            if($this->create() == false) {
+                return false;
+            }
         }
+
+        return true;
 
     }
 
