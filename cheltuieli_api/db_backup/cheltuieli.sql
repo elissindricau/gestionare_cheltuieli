@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 01, 2020 at 09:16 AM
+-- Generation Time: Nov 01, 2020 at 10:23 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -25,20 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorii`
---
-
-DROP TABLE IF EXISTS `categorii`;
-CREATE TABLE IF NOT EXISTS `categorii` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `categorie` varchar(100) NOT NULL,
-  `utilizator` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin2;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `cheltuieli`
 --
 
@@ -51,24 +37,6 @@ CREATE TABLE IF NOT EXISTS `cheltuieli` (
   `descriere` varchar(100) NOT NULL,
   `data_cheltuielii` date NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin2;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `utilizatori`
---
-
-DROP TABLE IF EXISTS `utilizatori`;
-CREATE TABLE IF NOT EXISTS `utilizatori` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nume` varchar(100) NOT NULL,
-  `prenume` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `parola` varchar(100) NOT NULL,
-  `buget` varchar(100) NOT NULL,
-  `data_inscrierii` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin2;
 COMMIT;
