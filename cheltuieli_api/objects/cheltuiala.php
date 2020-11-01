@@ -38,8 +38,7 @@ class Cheltuiala{
     function citeste_utilizator(){
     
         // select all query
-        $query = "SELECT * FROM " . $this->table_name . " WHERE utilizator LIKE " . $this->utilizator_id ;
-    
+        $query = "SELECT * FROM " . $this->table_name . " WHERE utilizator_id LIKE " . $this->utilizator_id ;
         // prepare query statement
         $stmt = $this->conn->prepare($query);
     
@@ -48,39 +47,6 @@ class Cheltuiala{
     
         return $stmt;
     }
-
-    function citeste_utilizator_luna($luna){
-    
-        $stmt = $this->citeste_utilizator();
-        $num = $stmt->rowCount();
-
-        if($num > 0){
-            // products array
-            $chelt_arr=array();
-        
-            // retrieve our table contents
-            // fetch() is faster than fetchAll()
-            // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                // extract row
-                // this will make $row['name'] to
-                // just $name only
-                extract($row);
-                echo $data_cheltuielii;
-
-                /*
-        
-                $cat_item=array(
-                    "id" => $id,
-                    "categorie" => $categorie,
-                    "utilizator" => $utilizator
-                );
-        
-                array_push($cat_arr["records"], $cat_item);
-                */
-            }
-    }
-}
 
     // create product
     function create(){
