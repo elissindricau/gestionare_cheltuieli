@@ -11,14 +11,15 @@ $(document).ready(function(){
 function showCheltuieli(){
 
     // get list of products from the API
-    $.getJSON("http://localhost/api/cheltuiala/citeste_tot.php", function(data){
-
+    $.getJSON("http://localhost/gestionare_cheltuieli/cheltuieli_api/cheltuiala/citeste_tot.php", function(data){
+        console.log("test");
+        console.log(data);
         // html for listing categories
         var read_cheltuieli_html=`
-        <!-- when clicked, it will load the read cheltuiala form -->
+        <!-- when clicked, it will load the read cheltuiala form
         <div id='create-cheltuiala' class='btn btn-primary pull-right m-b-15px read-cheltuiala-button'>
             <span class='glyphicon glyphicon-plus'></span> Read cheltuieli
-        </div> 
+        </div> -->
 
         <!-- start table -->
         <table class='table table-bordered table-hover'>
@@ -36,25 +37,28 @@ function showCheltuieli(){
 
         $.each(data.records, function(key, val){
 
-            read_cheltuieli_html = ` 
+            read_cheltuieli_html += ` 
             
-                <td> 
-                    <tr>`+val.suma+`</tr>
-                    <tr>`+val.categorie+`</tr>
-                    <tr>`+val.descriere+`</tr>
-                    <tr>`+val.data_cheltuielii+`</tr>
-                    <tr>`+val.suma+`</tr>
-                </td>
+                <tr> 
+                    <td>`+val.suma+`</td>
+                    <td>`+val.categorie+`</td>
+                    <td>`+val.descriere+`</td>
+                    <td>`+val.data_cheltuielii+`</td>
+                    <td>`+"teeest"+`</td>
+                </tr>
 
             `;
+            
 
+            
         });
-    
+        
         // end table
-        read_cheltuieli_html+=`</table>`;
+        read_cheltuieli_html +=`</table>`;
 
         // inject to 'page-content' of our app
         $("#page-content").html(read_cheltuieli_html);
+
 
     });
 
