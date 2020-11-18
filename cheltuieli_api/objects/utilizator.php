@@ -83,7 +83,9 @@ class Utilizator{
         
     }
     
-    function update(){
+    function update($test){
+
+        if($test){
 
         $query = "UPDATE
         " . $this->table_name . "
@@ -91,6 +93,8 @@ class Utilizator{
             nume=:nume, prenume=:prenume, email=:email, parola=:parola, buget=:buget;
         WHERE
             id=:id";
+
+        //echo $this->id;
 
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -113,11 +117,13 @@ class Utilizator{
 
         // execute query
         if($stmt->execute()){
-            return true;
+            return $this->id;
         }
     
         return false;
 
+    }
+    return false;
     }
 
     // delete the product

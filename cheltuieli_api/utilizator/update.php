@@ -16,7 +16,7 @@ $database = new Database();
 $db = $database->getConnection();
   
 $util = new Utilizator($db);
-  
+
 // get posted data
 $data = json_decode(file_get_contents("php://input"));
 
@@ -33,13 +33,13 @@ if(!empty($data->id)){
     $util->buget = $data->buget;
   
     // create the product
-    if($util->update()){
+    if(1){
   
         // set response code - 200 OK
         http_response_code(200);
   
         // tell the user
-        echo json_encode(array("message" => "Utilizatorul a fost updatat."));
+        echo json_encode(array("message" => "Utilizatorul a fost updatat. ".$util->id." ".$util->update(1)));
     }
   
     // if unable to create the product, tell the user
