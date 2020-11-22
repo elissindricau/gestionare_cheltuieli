@@ -11,6 +11,7 @@ include_once '../config/database.php';
   
 // instantiate utilizator object
 include_once '../objects/utilizator.php';
+
   
 $database = new Database();
 $db = $database->getConnection();
@@ -30,14 +31,17 @@ if(!empty($data->nume)){
     $util->parola = $data->parola;
     $util->buget = $data->buget;
   
+    $last_id = $util->create();
+
+
     // create the product
-    if($util->create()){
+    if($last_id){
   
         // set response code - 201 created
         http_response_code(201);
   
         // tell the user
-        echo json_encode(array("message" => "Utilizatorul a fost adaugat."));
+        echo json_encode(array("message" => "Utilizatorul a fost adaugat: " . $last_id));
     }
   
     // if unable to create the product, tell the user

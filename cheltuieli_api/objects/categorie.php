@@ -32,7 +32,9 @@ class Categorie{
         return $stmt;
     }
 
-    function copiaza_defaults() {
+    function copiaza_defaults($id) {
+
+        $this->utilizator = $id;
         
         foreach($this->default_cat as $cat){
             $this->categorie = $cat;

@@ -1,4 +1,7 @@
 <?php
+
+include_once '../objects/categorie.php';
+
 class Utilizator{
   
     // database connection and table name
@@ -51,6 +54,8 @@ class Utilizator{
     // create product
     function create(){
     
+        //$cat = new Categorie();
+
         // query to insert record
         $query = "INSERT INTO
                     " . $this->table_name . "
@@ -76,7 +81,12 @@ class Utilizator{
     
         // execute query
         if($stmt->execute()){
-            return true;
+
+            $last_id = $this->conn->lastInsertId();
+            $cat = new Categorie($this->conn);
+            $cat->copiaza_defaults($last_id);
+            return $last_id;
+
         }
     
         return false;

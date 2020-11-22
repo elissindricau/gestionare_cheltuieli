@@ -9,6 +9,7 @@ header('Content-Type: application/json');
 // include database and object files
 include_once '../config/database.php';
 include_once '../objects/cheltuiala.php';
+include_once '../objects/categorie.php';
 
 // get database connection
 $database = new Database();
@@ -16,11 +17,25 @@ $db = $database->getConnection();
   
 // prepare product object
 $chelt = new Cheltuiala($db);
+$cat = new Categorie($db);
   
 // set ID property of record to read
 $chelt->utilizator_id = isset($_GET['utilizator']) ? $_GET['utilizator'] : die();
  
 if( $chelt->utilizator_id != null ){
+
+    $cat->utilizator = $chelt->utilizator_id;
+    $stmt_cat = $cat->citeste_categorii();
+    $num_cat = $stmt_cat->rowCount();
+    $cat_arr = array();
+    while($row = $stmt_cat->fetch(PDO::FETCH_ASSOC)) {
+
+        extract($row);
+        $cat_item = $row["categorie"];
+        array_push($cat_arr, $cat_item);
+
+    }
+
     // read the details of product to be edited
     $stmt = $chelt->citeste_utilizator();
     $num = $stmt->rowCount();
@@ -29,6 +44,8 @@ if( $chelt->utilizator_id != null ){
         // products array
         $chelt_arr=array();
         $chelt_arr["records"]=array();
+
+        $chelt_arr["categorii"] = $cat_arr;
     
         // retrieve our table contents
         // fetch() is faster than fetchAll()
@@ -59,11 +76,18 @@ if( $chelt->utilizator_id != null ){
     }
 
     else{
+
+            $chelt_arr=array();
+            $chelt_arr["records"]=array();
+
+            $chelt_arr["categorii"] = $cat_arr;
+            
             // set response code - 404 Not found
-            http_response_code(404);
+            http_response_code(200);
         
             // tell the user product does not exist
-            echo json_encode(array("message" => "Utilizatorul nu are nicio cheltuiala."));
+            echo json_encode($chelt_arr);
+            
     }
     
 

@@ -23,7 +23,7 @@ class Cheltuiala{
     function citeste_tot(){
     
         // select all query
-        $query = "SELECT * FROM " . $this->table_name;
+        $query = "SELECT * FROM " . $this->table_name . " ORDER BY data_cheltuielii DESC";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
