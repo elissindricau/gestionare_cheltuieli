@@ -41,7 +41,7 @@ class Utilizator{
     function citeste_utilizator(){
     
         // select all query
-        $query = "SELECT * FROM " . $this->table_name . " WHERE nume LIKE " . $this->nume;
+        $query = "SELECT * FROM " . $this->table_name . " WHERE email = '" . $this->email."'";
         // prepare query statement
         $stmt = $this->conn->prepare($query);
     

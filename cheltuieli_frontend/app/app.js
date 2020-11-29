@@ -1,7 +1,13 @@
 
 
+function getID() {
+
+    var user_id = sessionStorage.getItem("user_id");
+    return user_id;
+}
+
 $(document).ready(function(){
- 
+
     // app html
     var app_html=`
         <div class='container'>
@@ -10,6 +16,9 @@ $(document).ready(function(){
                 <h1 id='page-title'>Gestionare cheltuieli</h1>
             </div>
  
+
+            <div id='meniu'></div>
+        
             <!-- this is where the contents will be shown. -->
             <div id='page-content'></div>
  
@@ -17,6 +26,7 @@ $(document).ready(function(){
  
     // inject to 'app' in index.html
     $("#app").html(app_html);
+    showMeniu();
  
 });
  

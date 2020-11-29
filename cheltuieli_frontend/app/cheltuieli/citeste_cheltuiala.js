@@ -1,15 +1,8 @@
 
-
-$(document).ready(function(){
- 
-    // show list of categories on first load
-    showCheltuieli();
- 
-});
  
 function insertCategories(){
 
-    var user_id = 18;
+    var user_id = getID();
 
     return citesteCategorii(user_id);
 
@@ -22,20 +15,20 @@ function showCheltuieli(){
     var current_date = "" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
     //console.log(d.getMonth());
 
-    var user_id = 18;
+    var user_id = getID();
 
     // get list of products from the API
     $.getJSON("http://localhost/gestionare_cheltuieli/cheltuieli_api/cheltuiala/citeste_utilizator.php?utilizator=" + user_id, function(data){
         
         // html for listing categories
 
-        console.log(data);
+        //console.log(data);
         var options = "";
 
         $.each(data.categorii, function(key, val){
 
             var opt = "<option value=" + val + ">" + val + "</option> \n";
-            console.log(opt);
+            //console.log(opt);
             options += opt;
         });
 

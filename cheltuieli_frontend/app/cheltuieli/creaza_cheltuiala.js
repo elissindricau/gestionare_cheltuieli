@@ -3,7 +3,7 @@
 // function to show list of categories
 function adaugaCheltuiala(user_id){
 
-    console.log(user_id);
+    //console.log(user_id);
 
     var form_data;
 
@@ -30,7 +30,7 @@ function adaugaCheltuiala(user_id){
 
     var form_data=JSON.stringify(form_data);
 
-    console.log(form_data);
+    //console.log(form_data);
 
     // submit form data to api
     $.ajax({
@@ -44,7 +44,7 @@ function adaugaCheltuiala(user_id){
         },
         error: function(xhr, resp, text) {
             // show error to console
-            console.log(xhr, resp, text);
+            //console.log(xhr, resp, text);
         }
     });
  
