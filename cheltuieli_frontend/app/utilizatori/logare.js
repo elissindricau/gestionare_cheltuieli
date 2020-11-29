@@ -1,5 +1,3 @@
-
-
 function showLogare() {
 
     var login = `
@@ -78,11 +76,10 @@ function logheazaUtilizator(result) {
     sessionStorage.setItem("nume", user["nume"]);
     sessionStorage.setItem("prenume", user["prenume"]);
     sessionStorage.setItem("email", user["email"]);
-    
+    sessionStorage.setItem("buget", user["buget"]);
 
     showMeniu();
     showCheltuieli();
-    //console.log(getID());
 
 }
 

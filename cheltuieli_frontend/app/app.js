@@ -6,6 +6,12 @@ function getID() {
     return user_id;
 }
 
+function getPrenume() {
+
+    var prenume = sessionStorage.getItem("prenume");
+    return prenume;
+}
+
 $(document).ready(function(){
 
     // app html

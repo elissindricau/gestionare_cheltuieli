@@ -1,11 +1,8 @@
 
 function showMeniu() {
 
-    var meniu = `
-
-        <table>
-        <tr>
-    `;
+    var meniu = "";
+    var start_tabel = "<table><tr>";
 
     var logare = `
         <td>
@@ -30,7 +27,7 @@ function showMeniu() {
     `;
     var statistici = `
         <td>
-        <div onclick="statistici(2020, 11)" id='statistici' class='btn btn-primary m-b-15px statistici-button'>
+        <div onclick="statistici(0)" id='statistici' class='btn btn-primary m-b-15px statistici-button'>
             Statistici
         </div>
         </td>
@@ -42,6 +39,8 @@ function showMeniu() {
         </div>
         </td>
     `;
+
+    var bun_venit = "<center><b>Bine ai venit " + getPrenume() + "!</b></center></br>";
     var meniu_end = `
         </tr>
         </table>
@@ -50,11 +49,11 @@ function showMeniu() {
 
     if(getID()) {
 
-        meniu += cheltuieli + statistici + delogare + meniu_end;
+        meniu += bun_venit + start_tabel + cheltuieli + statistici + delogare + meniu_end;
     }
     else {
 
-        meniu += logare + inregistrare + meniu_end;
+        meniu += start_tabel + logare + inregistrare + meniu_end;
     }
 
     $("#meniu").html(meniu);
