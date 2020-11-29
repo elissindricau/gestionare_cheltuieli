@@ -29,7 +29,7 @@ function statistici(an, luna){
             var d = new Date(val["data_cheltuielii"]);
             var cheltuiala = {
                 an: d.getFullYear(),
-                luna: data.getMonth() + 1,
+                luna: d.getMonth() + 1,
                 categoria: val["categorie"],
                 suma: parseInt(val["suma"])
             }
@@ -40,7 +40,10 @@ function statistici(an, luna){
 
                 categorii[cheltuiala.categoria] += cheltuiala.suma;
             }
-            
+
+            if(!cheltuieli.hasOwnProperty(cheltuiala.an))
+                cheltuieli[cheltuiala.an] = Array();
+
             if($.inArray(cheltuiala.luna, cheltuieli[cheltuiala.an]) === -1) 
                 cheltuieli[cheltuiala.an].push(cheltuiala.luna);
             
