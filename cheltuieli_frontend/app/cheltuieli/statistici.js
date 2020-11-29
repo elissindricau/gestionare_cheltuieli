@@ -6,8 +6,7 @@ function statistici(an, luna){
     var drop_year = "";
     var drop_month = "";
     var cheltuieli = Array();
-    var d = new Date();
-    var current_date = "" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+
     //console.log(d.getMonth());
 
     var user_id = getID();
@@ -24,14 +23,12 @@ function statistici(an, luna){
             categorii[val] = 0;
         });
 
-        var years = Array();
-        var months = Array();
 
         $.each(data.records, function(key, val){
 
-            var data = new Date(val["data_cheltuielii"]);
+            var d = new Date(val["data_cheltuielii"]);
             var cheltuiala = {
-                an: data.getFullYear(),
+                an: d.getFullYear(),
                 luna: data.getMonth() + 1,
                 categoria: val["categorie"],
                 suma: parseInt(val["suma"])
@@ -43,20 +40,13 @@ function statistici(an, luna){
 
                 categorii[cheltuiala.categoria] += cheltuiala.suma;
             }
-
-            if($.inArray(cheltuiala.an, years) === -1) 
-                years.push(cheltuiala.an);
             
-            if($.inArray(cheltuiala.luna, months) === -1) 
-                months.push(cheltuiala.luna);
+            if($.inArray(cheltuiala.luna, cheltuieli[cheltuiala.an]) === -1) 
+                cheltuieli[cheltuiala.an].push(cheltuiala.luna);
             
-            cheltuieli.push(cheltuiala);
         });
 
-        console.log(years);
-        console.log(months);
-
-        //console.log(cheltuieli);
+        console.log(cheltuieli);
         //console.log(categorii);
         
         // inject to 'page-content' of our app
