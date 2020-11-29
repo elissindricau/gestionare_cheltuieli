@@ -40,13 +40,19 @@ function statistici(an, luna){
 
                 categorii[cheltuiala.categoria] += cheltuiala.suma;
             }
+            var an_luna = cheltuieli.an + "-" + cheltuieli.luna;
+            
+            if($.inArray(an_luna, cheltuieli) === -1) 
+                cheltuieli.push(an_luna);
 
+
+            /*
             if(!cheltuieli.hasOwnProperty(cheltuiala.an))
                 cheltuieli[cheltuiala.an] = Array();
 
             if($.inArray(cheltuiala.luna, cheltuieli[cheltuiala.an]) === -1) 
                 cheltuieli[cheltuiala.an].push(cheltuiala.luna);
-            
+            */
         });
 
         console.log(cheltuieli);
