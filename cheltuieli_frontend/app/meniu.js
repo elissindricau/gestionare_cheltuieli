@@ -30,7 +30,7 @@ function showMeniu() {
     `;
     var statistici = `
         <td>
-        <div onclick="statistici()" id='statistici' class='btn btn-primary m-b-15px statistici-button'>
+        <div onclick="statistici(2020, 11)" id='statistici' class='btn btn-primary m-b-15px statistici-button'>
             Statistici
         </div>
         </td>
