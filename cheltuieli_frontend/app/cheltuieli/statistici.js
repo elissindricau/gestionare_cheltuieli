@@ -75,7 +75,7 @@ function statistici(an_luna){
                             Verifica luna
                          </div>`;
 
-        var pie_chart = "<div class='container'> <canvas id='pieChart' width='400' height='400'></canvas> </div>";
+        var pie_chart = "<div class='container' align='center'> <canvas id='pieChart'></canvas> </div>";
 
         //console.log(cheltuieli);
         //console.log(categorii);

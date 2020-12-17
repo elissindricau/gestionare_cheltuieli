@@ -32,3 +32,89 @@
 .margin-bottom-1em { margin-bottom:1em; }
 .margin-zero{ margin:0; }
 .text-align-center{ text-align:center; }
+
+body.body_app {
+    background-image: url("gif.gif");
+    background-repeat: no-repeat;
+}
+
+
+#page-title {
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgb(56, 97, 84);
+}
+
+#meniu {
+    
+}
+
+#logare {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2px;
+    padding: 5px 24px;
+    background-color: #76b7c7;
+}
+
+#inregistrare {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2px;
+    padding: 5px 24px;
+    background-color: #76b7c7;
+}
+
+#cheltuieli {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2px;
+    padding: 5px 24px;
+    background-color: #76b7c7;
+}
+
+#statistici {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2px;
+    padding: 5px 24px;
+    background-color: #76b7c7;
+    background-color: #76b7c7;
+}
+
+#delogare {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2px;
+    padding: 5px 24px;
+    background-color: #76b7c7;
+}
+
+#pieChart {
+    max-width:800px;
+    max-height:800px;
+}
+
+
+#valoare {
+    background-color: rgb(230, 171, 117);
+}
+
+#categorie {
+    background-color: rgb(230, 171, 117);
+}
+
+#detalii {
+    background-color: rgb(230, 171, 117);
+}
+
+#data {
+    background-color: rgb(230, 171, 117);
+}
+
+#action {
+    background-color: rgb(230, 171, 117);
+}
+
+#create-cheltuiala {
+    background-color:  rgb(241, 213, 185);
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2px;
+    padding: 5px 24px;
+}

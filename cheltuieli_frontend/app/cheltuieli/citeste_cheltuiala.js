@@ -39,11 +39,11 @@ function showCheltuieli(){
     
         <!-- creating our table heading -->
         <tr>
-            <th class='w-15-pct'>Valoare</th>
-            <th class='w-15-pct'>Categorie</th>
-            <th class='w-15-pct'>Detalii</th>
-            <th class='w-15-pct'>Data</th>
-            <th class='w-25-pct text-align-center'>Action</th>
+            <th class='w-15-pct' id='valoare'>Valoare</th>
+            <th class='w-15-pct' id='categorie'>Categorie</th>
+            <th class='w-15-pct' id='detalii'>Detalii</th>
+            <th class='w-15-pct' id='data'>Data</th>
+            <th class='w-25-pct text-align-center' id='action'>Action</th>
         </tr>
         
         <!-- Primul rand e pentru introducere de cheltuiala noua -->
@@ -72,7 +72,7 @@ function showCheltuieli(){
                     <td>`+val.categorie+`</td>
                     <td>`+val.descriere+`</td>
                     <td>`+val.data_cheltuielii+`</td>
-                    <td>
+                    <td class='w-25-pct text-align-center'>
                         <div onclick="stergeCheltuiala(` + val.id + `)" id='sterge-cheltuiala' class='btn btn-danger pull-right m-b-15px sterge-cheltuiala-button'>
                             Sterge
                         </div>
