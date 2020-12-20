@@ -60,7 +60,11 @@ function statistici(an_luna){
 
         });
 
-        drop_an_luna = "<select id='drop_statistici'>";
+        //var meniu_verif = "";
+        //var start_tabel_verif = "<table><tr>";
+        //var drop_statistici = `<td>` + an_luna + `</td>`;
+
+        drop_an_luna = "<div class='custom-select'><select id='drop_statistici'>";
 
         $.each(cheltuieli, function(key, val){
 
@@ -69,11 +73,36 @@ function statistici(an_luna){
             drop_an_luna += opt;
         });
 
-        drop_an_luna += "</select>";
+        drop_an_luna += "</select></div>";
 
-        drop_an_luna += `<div onclick="getStatistici()" id='statistici' class='btn btn-primary m-b-15px delogare-button'>
+        drop_an_luna += `<div onclick="getStatistici()" id='statistici_luna' class='btn btn-primary m-b-15px verificare-button'>
                             Verifica luna
                          </div>`;
+                    
+        /*var verif_luna = `
+        <td>` + drop_an_luna + `</td>`;
+
+        var meniu_end = `
+        </tr>
+        </table>
+        `;
+
+        meniu_verif = start_tabel_verif + drop_statistici + verif_luna + meniu_end;
+        $("#meniu_verif").html(meniu_verif);
+        
+
+        read_statistici_html = ` 
+            
+        <tr> 
+            <td>`+an_luna+`</td>
+            <td>`+drop_an_luna+`</td>
+        </tr>
+        `;
+        read_statistici_html +=`</table>`;
+        $("#page-content").html(read_statistici_html);  */
+
+
+
 
         var pie_chart = "<div class='container' align='center'> <canvas id='pieChart'></canvas> </div>";
 
@@ -84,18 +113,33 @@ function statistici(an_luna){
         var i = iesiri(categorii);
         var buget_ramas = buget - i;
 
+      /*!!!!!!!!!!!!!!!!!*/  var add_buget = `<div onclick="adaugaBuget()" id='add_buget' class='btn btn-primary m-b-15px buget-button'>
+                            `;
+
         if(buget_ramas>0){
             var buget_html = `<div>
                             Buget pe luna: ` +  buget + `</br>
                             Total cheltuieli: ` +  i + `</br>
                             De cheltuit: ` +  buget_ramas + `</br>
+                            <br>
                             </div>`;
         } else {
-            var buget_html = `<div>
-            Buget pe luna: ` +  buget + `</br>
-            Total cheltuieli: ` +  i + `</br>
-            <b>Ai depasit bugetul lunar!</b></br>
-            </div>`;
+            if(buget_ramas<0){
+                var buget_html = `<div>
+                Buget pe luna: ` +  buget + `</br>
+                Total cheltuieli: ` +  i + `</br>
+                <b>Ai depasit bugetul lunar!</b></br>
+                <br>
+                </div>`;
+            }
+            else {
+                var buget_html = `<div>
+                Buget pe luna: ` +  buget + `</br>
+                Total cheltuieli: ` +  i + `</br>
+                <b>Bugetul tau e 0!</b></br>
+                <br>
+                </div>`;
+            }
         }
 
         
@@ -142,13 +186,13 @@ function showGraph(c){
         data: suma,
         labels: cat,
         backgroundColor: [
-            "#4b77a9",
-            "#5f255f",
-            "#d21243",
+            "#9C505C",
+            "#29212E",
+            "#3D2A39",
+            "#6A424D",
+            "#CE726D",
             "#B27200",
-            "#e45643",
-            "#056243",
-            "#c21243"
+            "#FFCB76"
         ],
         borderColor: "#fff"
     }];

@@ -42,18 +42,17 @@ body.body_app {
 #page-title {
     text-align: center;
     text-transform: uppercase;
-    text-shadow: 2px 2px 5px rgb(56, 97, 84);
+    font-family: "Courier New";
 }
 
-#meniu {
-    
-}
+
 
 #logare {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 2px;
     padding: 5px 24px;
     background-color: #76b7c7;
+    border-color: #76b7c7;
 }
 
 #inregistrare {
@@ -61,6 +60,7 @@ body.body_app {
     border-radius: 2px;
     padding: 5px 24px;
     background-color: #76b7c7;
+    border-color: #76b7c7;
 }
 
 #cheltuieli {
@@ -68,6 +68,7 @@ body.body_app {
     border-radius: 2px;
     padding: 5px 24px;
     background-color: #76b7c7;
+    border-color: #76b7c7;
 }
 
 #statistici {
@@ -75,7 +76,7 @@ body.body_app {
     border-radius: 2px;
     padding: 5px 24px;
     background-color: #76b7c7;
-    background-color: #76b7c7;
+    border-color: #76b7c7;
 }
 
 #delogare {
@@ -83,6 +84,7 @@ body.body_app {
     border-radius: 2px;
     padding: 5px 24px;
     background-color: #76b7c7;
+    border-color: #76b7c7;
 }
 
 #pieChart {
@@ -115,6 +117,31 @@ body.body_app {
     background-color:  rgb(241, 213, 185);
     color: black;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 2px;
+    border-radius: 10px;
+    padding: 10px 30px;
+    border-color: rgb(241, 213, 185);
+}
+
+#sterge-cheltuiala {
+    background-color:  rgb(209, 106, 106);
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
     padding: 5px 24px;
+    border-color:  rgb(209, 106, 106);
+}
+
+#statistici_luna {
+    border-radius: 2px;
+    padding: 2px 9px;
+    background-color: #76b7c7;
+    border-color: #76b7c7;
+}
+
+#drop_statistici {
+    color: #76b7c7;
+    border-radius: 2px;
+    padding: 2px 10px;
+    background-color: white;
+    border-color: #76b7c7;
 }

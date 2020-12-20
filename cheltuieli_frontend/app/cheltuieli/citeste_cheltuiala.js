@@ -13,6 +13,11 @@ function showCheltuieli(){
 
     var d = new Date();
     var current_date = "" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+    /*var current_date = `<label for="start"> </lable>
+                            <input type="date" id="start" name="trip-start"
+                                    value='2020-12-20'
+                                    min='2020-01-01' max='2050-12-31'>`;*/
+    
     //console.log(d.getMonth());
 
     var user_id = getID();
@@ -51,7 +56,7 @@ function showCheltuieli(){
             <td class='w-15-pct'><input type="text" id="ivaloare" name="ivaloare"></td>
             <td class='w-15-pct'><select id="icategorie" name="icategorie">` + options + `</select></td>
             <td class='w-15-pct'><input type="text" id="idetalii" name="idetalii"></td>
-            <td class='w-15-pct'><input type="text" id="idata" name="idata" value="` + current_date + `"></td>
+            <td class='w-15-pct'><input type="date" id="idata" name="idata" value="` + current_date + `"></td>
             <td class='w-25-pct text-align-center'>
                 <div onclick="adaugaCheltuiala(` + user_id + `)" id='create-cheltuiala' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
                     Adauga
@@ -73,7 +78,7 @@ function showCheltuieli(){
                     <td>`+val.descriere+`</td>
                     <td>`+val.data_cheltuielii+`</td>
                     <td class='w-25-pct text-align-center'>
-                        <div onclick="stergeCheltuiala(` + val.id + `)" id='sterge-cheltuiala' class='btn btn-danger pull-right m-b-15px sterge-cheltuiala-button'>
+                        <div onclick="stergeCheltuiala(` + val.id + `)" id='sterge-cheltuiala' class='btn btn-danger m-b-15px sterge-cheltuiala-button'>
                             Sterge
                         </div>
                     </td>
