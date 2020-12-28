@@ -145,3 +145,11 @@ body.body_app {
     background-color: white;
     border-color: #76b7c7;
 }
+
+#adaugare-buget{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 2px;
+    padding: 5px 24px;
+    background-color: #76b7c7;
+    border-color: #76b7c7;
+}

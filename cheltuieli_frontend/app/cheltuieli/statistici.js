@@ -113,32 +113,82 @@ function statistici(an_luna){
         var i = iesiri(categorii);
         var buget_ramas = buget - i;
 
-      /*!!!!!!!!!!!!!!!!!*/  var add_buget = `<div onclick="adaugaBuget()" id='add_buget' class='btn btn-primary m-b-15px buget-button'>
-                            `;
-
         if(buget_ramas>0){
+
+            var bug = `<input type="text" id="add_buget" name="buget"></td>`;
+            var input = document.getElementById("add_buget");
             var buget_html = `<div>
-                            Buget pe luna: ` +  buget + `</br>
-                            Total cheltuieli: ` +  i + `</br>
-                            De cheltuit: ` +  buget_ramas + `</br>
-                            <br>
-                            </div>`;
+            Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
+            <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
+                Modifica buget
+            </div>
+            <div>
+                Total cheltuieli: ` +  i + `</br>
+            </div>
+            De cheltuit: ` + buget_ramas + `</br>
+            <br>
+            </div>`;
+
+
+            // var buget_html = `<div>
+            //                 Buget pe luna: ` +  buget + `</br>
+            //                 Total cheltuieli: ` +  i + `</br>
+            //                 De cheltuit: ` +  buget_ramas + `</br>
+            //                 <br>
+            //                 </div>`;
         } else {
             if(buget_ramas<0){
+
+                
+                var bug = `<input type="text" id="add_buget" name="buget">`;
+                var input = document.getElementById("add_buget");
                 var buget_html = `<div>
-                Buget pe luna: ` +  buget + `</br>
-                Total cheltuieli: ` +  i + `</br>
+                Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
+                <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
+                    Modifica buget
+                </div>
+                <div>
+                    Total cheltuieli: ` +  i + `</br>
+                </div>
                 <b>Ai depasit bugetul lunar!</b></br>
                 <br>
                 </div>`;
+
+
+
+                // var buget_html = `<div>
+                // Buget pe luna: ` +  buget + `</br>
+                // Total cheltuieli: ` +  i + `</br>
+                // <b>Ai depasit bugetul lunar!</b></br>
+                // <br>
+                // </div>`;
             }
             else {
+
+                
+                var bug = `<input type="text" id="add_buget" name="buget"></td>`;
+                var input = document.getElementById("add_buget");
                 var buget_html = `<div>
-                Buget pe luna: ` +  buget + `</br>
-                Total cheltuieli: ` +  i + `</br>
-                <b>Bugetul tau e 0!</b></br>
+                Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
+                <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
+                    Modifica buget
+                </div>
+                <div>
+                    Total cheltuieli: ` +  i + `</br>
+                </div>
+                <b>Bugetul tau este 0!</b></br>
                 <br>
                 </div>`;
+
+
+
+
+                // var buget_html = `<div>
+                // Buget pe luna: ` +  buget + `</br>
+                // Total cheltuieli: ` +  i + `</br>
+                // <b>Bugetul tau e 0!</b></br>
+                // <br>
+                // </div>`;
             }
         }
 
@@ -150,6 +200,13 @@ function statistici(an_luna){
 
 
     });
+}
+
+function adaugaBuget(buget){
+
+    var buget_nou = `<div>Buget pe luna: `+ buget;
+    return buget_nou;
+
 }
 
 function iesiri(c){
