@@ -7,14 +7,14 @@ function showMeniu() {
     var logare = `
         <td>
         <div onclick="showLogare()" id='logare' class='btn btn-primary m-b-15px logare-button'>
-            Logare
+            Logare <span class="glyphicon">&#xe008;</span>
         </div>
         </td>
     `;
     var inregistrare = `
         <td>
         <div onclick="showFormular()" id='inregistrare' class='btn btn-primary m-b-15px inregistrare-button'>
-            Inregistrare
+            Inregistrare <span class="glyphicon">&#x270f;</span>
         </div>
         </td>
     `;

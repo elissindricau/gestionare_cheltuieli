@@ -24,7 +24,7 @@ function showFormular() {
 				<div class="form-group">
 					 
 					<label for="email">
-						Email
+						Email 
 					</label>
 					<input type="email" class="form-control" id="uemail" />
 				</div>

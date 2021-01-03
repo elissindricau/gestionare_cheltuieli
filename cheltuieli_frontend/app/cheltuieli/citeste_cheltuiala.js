@@ -44,22 +44,22 @@ function showCheltuieli(){
     
         <!-- creating our table heading -->
         <tr>
-            <th class='w-15-pct' id='valoare'>Valoare</th>
-            <th class='w-15-pct' id='categorie'>Categorie</th>
-            <th class='w-15-pct' id='detalii'>Detalii</th>
-            <th class='w-15-pct' id='data'>Data</th>
+            <th class='w-15-pct text-align-center' id='valoare'>Valoare</th>
+            <th class='w-15-pct text-align-center' id='categorie'>Categorie</th>
+            <th class='w-15-pct text-align-center' id='detalii'>Detalii</th>
+            <th class='w-15-pct text-align-center' id='data'>Data</th>
             <th class='w-25-pct text-align-center' id='action'>Action</th>
         </tr>
         
         <!-- Primul rand e pentru introducere de cheltuiala noua -->
         <tr>
-            <td class='w-15-pct'><input type="text" id="ivaloare" name="ivaloare"></td>
-            <td class='w-15-pct'><select id="icategorie" name="icategorie">` + options + `</select></td>
-            <td class='w-15-pct'><input type="text" id="idetalii" name="idetalii"></td>
-            <td class='w-15-pct'><input type="date" id="idata" name="idata" value="` + current_date + `"></td>
+            <td class='w-15-pct text-align-center'><input type="text" id="ivaloare" name="ivaloare"></td>
+            <td class='w-15-pct text-align-center'><select id="icategorie" name="icategorie">` + options + `</select></td>
+            <td class='w-15-pct text-align-center'><input type="text" id="idetalii" name="idetalii"></td>
+            <td class='w-15-pct text-align-center'><input type="date" id="idata" name="idata" value="` + current_date + `"></td>
             <td class='w-25-pct text-align-center'>
                 <div onclick="adaugaCheltuiala(` + user_id + `)" id='create-cheltuiala' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
-                    Adauga
+                <span class="glyphicon">&#x2b;</span>
                 </div>
             </td>
         </tr>
@@ -76,10 +76,10 @@ function showCheltuieli(){
                     <td>`+val.suma+`</td>
                     <td>`+val.categorie+`</td>
                     <td>`+val.descriere+`</td>
-                    <td>`+val.data_cheltuielii+`</td>
+                    <td class='w-25-pct text-align-center'>`+val.data_cheltuielii+`</td>
                     <td class='w-25-pct text-align-center'>
                         <div onclick="stergeCheltuiala(` + val.id + `)" id='sterge-cheltuiala' class='btn btn-danger m-b-15px sterge-cheltuiala-button'>
-                            Sterge
+                        <span class="glyphicon">&#xe020;</span>
                         </div>
                     </td>
                 </tr>

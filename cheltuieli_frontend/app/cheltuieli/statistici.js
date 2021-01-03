@@ -27,7 +27,7 @@ function statistici(an_luna){
     // get list of products from the API
     $.getJSON("http://localhost/gestionare_cheltuieli/cheltuieli_api/cheltuiala/citeste_utilizator.php?utilizator=" + user_id, function(data){
       
-        console.log("categorii");
+        //console.log("categorii");
 
         var categorii = Array();
 
@@ -115,80 +115,83 @@ function statistici(an_luna){
 
         if(buget_ramas>0){
 
-            var bug = `<input type="text" id="add_buget" name="buget"></td>`;
-            var input = document.getElementById("add_buget");
-            var buget_html = `<div>
-            Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
-            <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
-                Modifica buget
-            </div>
-            <div>
-                Total cheltuieli: ` +  i + `</br>
-            </div>
-            De cheltuit: ` + buget_ramas + `</br>
-            <br>
-            </div>`;
+            // `<input type="text" id="ivaloare" name="ivaloare"></input>`;
+            // valoare = document.getElementById("ivaloare").value;
 
-
+            // var bug = `<input type="text" id="add_buget" name="add_buget"></input>`;
+            // var bug = document.getElementById("add_buget").value;
             // var buget_html = `<div>
-            //                 Buget pe luna: ` +  buget + `</br>
-            //                 Total cheltuieli: ` +  i + `</br>
-            //                 De cheltuit: ` +  buget_ramas + `</br>
-            //                 <br>
-            //                 </div>`;
+            // Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
+            // <div onclick="adaugaBuget(`+ bug +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
+            //     Modifica buget
+            // </div>
+            // <div>
+            //     Total cheltuieli: ` +  i + `</br>
+            // </div>
+            // De cheltuit: ` + buget_ramas + `</br>
+            // <br>
+            // </div>`;
+
+
+            var buget_html = `<div id="detalii_buget">
+                            <span class="glyphicon">&#xe225;</span> Buget lunar: ` +  buget + `</br>
+                            <span class="glyphicon">&#x2212;</span> Total cheltuieli: ` +  i + `</br>
+                            <span class="glyphicon">&#x2b;</span> De cheltuit: ` +  buget_ramas + `</br>
+                            <br>
+                            </div>`;
         } else {
             if(buget_ramas<0){
 
                 
-                var bug = `<input type="text" id="add_buget" name="buget">`;
-                var input = document.getElementById("add_buget");
-                var buget_html = `<div>
-                Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
-                <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
-                    Modifica buget
-                </div>
-                <div>
-                    Total cheltuieli: ` +  i + `</br>
-                </div>
-                <b>Ai depasit bugetul lunar!</b></br>
-                <br>
-                </div>`;
-
-
-
+                // var bug = `<input type="text" id="add_buget" name="buget">`;
+                // var input = document.getElementById("add_buget");
                 // var buget_html = `<div>
-                // Buget pe luna: ` +  buget + `</br>
-                // Total cheltuieli: ` +  i + `</br>
+                // Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
+                // <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
+                //     Modifica buget
+                // </div>
+                // <div>
+                //     Total cheltuieli: ` +  i + `</br>
+                // </div>
                 // <b>Ai depasit bugetul lunar!</b></br>
                 // <br>
                 // </div>`;
+
+
+
+                var buget_html = `<div>
+                <span class="glyphicon">&#xe225;</span> Buget lunar: ` +  buget + `</br>
+                <span class="glyphicon">&#x2212;</span> Total cheltuieli: ` +  i + `</br>
+                <span class="glyphicon">&#xe209;</span> <b>Ai depasit bugetul lunar!</b></br>
+                <br>
+                </div>`;
             }
             else {
 
                 
-                var bug = `<input type="text" id="add_buget" name="buget"></td>`;
-                var input = document.getElementById("add_buget");
-                var buget_html = `<div>
-                Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
-                <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
-                    Modifica buget
-                </div>
-                <div>
-                    Total cheltuieli: ` +  i + `</br>
-                </div>
-                <b>Bugetul tau este 0!</b></br>
-                <br>
-                </div>`;
-
-
-
-
+                // var bug = `<input type="text" id="add_buget" name="buget"></td>`;
+                // var input = document.getElementById("add_buget");
                 // var buget_html = `<div>
-                // Buget pe luna: ` +  buget + `</br>
-                // Total cheltuieli: ` +  i + `</br>
-                // <b>Bugetul tau e 0!</b></br>
+                // Buget pe luna: ` + buget + `</br>` + bug + `</br> </div>
+                // <div onclick="adaugaBuget(`+ input +`)" id='adaugare-buget' class='btn btn-primary m-b-15px adauga-cheltuiala-button'>
+                //     Modifica buget
+                // </div>
+                // <div>
+                //     Total cheltuieli: ` +  i + `</br>
+                // </div>
+                // <b>Bugetul tau este 0!</b></br>
                 // <br>
                 // </div>`;
+
+
+
+
+                var buget_html = `<div>
+                <span class="glyphicon">&#xe225;</span> Buget lunar: ` +  buget + `</br>
+                <span class="glyphicon">&#x2212;</span> Total cheltuieli: ` +  i + `</br>
+                <span class="glyphicon">&#xe209;</span> <b>Bugetul tau e 0!</b></br>
+                <br>
+                </div>`;
             }
         }
 
@@ -236,8 +239,8 @@ function showGraph(c){
     }
 
 
-    console.log(cat);
-    console.log(suma);
+    //console.log(cat);
+    //console.log(suma);
 
     var data = [{
         data: suma,

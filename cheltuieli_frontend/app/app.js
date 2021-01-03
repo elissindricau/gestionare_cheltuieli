@@ -19,7 +19,7 @@ $(document).ready(function(){
         <div class='container'>
  
             <div class='page-header'>
-                <h1 id='page-title'>Gestionare cheltuieli</h1>
+                <h1 id='page-title'> Gestionare cheltuieli </h1>
             </div>
  
 
