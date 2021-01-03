@@ -33,6 +33,7 @@
 .margin-zero{ margin:0; }
 .text-align-center{ text-align:center; }
 
+
 body.body_app {
     background: url(gif.gif) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -40,6 +41,8 @@ body.body_app {
     -o-background-size: cover;
     background-size: cover;
 }
+
+
 
 
 #page-title {
@@ -156,3 +159,4 @@ body.body_app {
     background-color: #76b7c7;
     border-color: #76b7c7;
 }
+
